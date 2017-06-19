@@ -1,0 +1,26 @@
+<%= form_for(@picture) do |f| %>
+
+  <% if @picture.errors.any? %>
+  <div id="error_explanation">
+    <h2><%=@picture.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <%= f.label :タイトル %>
+  <%= f.text_field :title, class:'form-control' %>
+  <br>
+  <%= f.label :pitcure %>
+  <%= f.file_field :pitcure %>
+  <br>
+  <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+
+<% end %>
+
+
+<br>
+<%= link_to "投稿写真一覧にもどる", pictures_path %>
