@@ -14,8 +14,10 @@
   <%= f.label :タイトル %>
   <%= f.text_field :title, class:'form-control' %>
   <br>
-  <%= f.label :pitcure %>
-  <%= f.file_field :pitcure %>
+  <%= f.label :picture %>
+  <%= picture_img(@picture) if picture_img(@picture) %>
+  <%= f.file_field :picture %>
+  <%= f.hidden_field :picture_cache %>
   <br>
   <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
 

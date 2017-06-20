@@ -9,7 +9,8 @@
 <% @pictures.each do |picture| %>
 <div class="row">
   <p>タイトル:<%= picture.title %>
-  <p>投稿写真：<%= picture.picture %>
+  <p>投稿者：<%=picture.user_name %></p>
+  <p>投稿写真：<%= image_tag(picture.picture) %>
   <br>
   <%= link_to "投稿を編集する", edit_picture_path(picture.id), data: {confirm: '本当に編集してよいですか？'}%>
   <br>

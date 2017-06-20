@@ -9,4 +9,9 @@ module ApplicationHelper
      end
      image_tag(img_url, alt: user.name)
    end
+
+  def picture_img(picture)
+    return image_tag(picture.picture, alt: picture.title) if picture.picture?
+  end
+
 end
